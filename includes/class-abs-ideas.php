@@ -109,6 +109,11 @@ class ABS_Ideas {
 			</select>
 		</p>
 
+		<p>
+			<label class="abs-neuro-label" for="abs-topic-input"><?php echo esc_html('Teema'); ?></label>
+			<textarea id="abs-topic-input" rows="3" class="large-text" placeholder="<?php echo esc_attr('Valikuline teema…'); ?>"></textarea>
+		</p>
+
 			<p>
 				<button type="button" id="abs-generate-ideas" class="button button-primary button-hero"><?php echo esc_html('Generate ideas'); ?></button>
 				<span id="abs-ideas-spinner" class="abs-spinner" hidden></span>
@@ -228,6 +233,9 @@ class ABS_Ideas {
 
 		$prompt = str_replace('{neurodifference}', '' !== $neuro_name ? ('' === $neuro_desc ? $neuro_name : $neuro_name . ' — ' . $neuro_desc) : ABS_Settings::neurodifference_context(-1), $prompt);
 		$prompt = str_replace('{character}', ABS_Settings::character_context($char), $prompt);
+
+		$topic = isset($_POST['topic']) ? trim((string) sanitize_textarea_field(wp_unslash((string) $_POST['topic']))) : '';
+		$prompt = str_replace('{topic}', '' !== $topic ? 'Loo teema: ' . $topic : '', $prompt);
 
 		$config = ABS_Settings::task_config('ideas');
 

@@ -886,7 +886,7 @@ class ABS_Settings {
 						<th scope="row"><label for="abs_ideas_prompt"><?php echo esc_html('Ideas prompt'); ?></label></th>
 						<td>
 							<textarea id="abs_ideas_prompt" name="abs_settings[ideas_prompt]" rows="9" class="large-text code"><?php echo esc_textarea($settings['ideas_prompt']); ?></textarea>
-							<p class="description"><?php echo esc_html('Placeholders: {count} = number of ideas, {existing_titles} = recent story titles to avoid duplicates, {neurodifference} = the neurodifference of the selected character, {character} = the character selected on the Generate page.'); ?></p>
+							<p class="description"><?php echo esc_html('Placeholders: {count} = number of ideas, {existing_titles} = recent story titles to avoid duplicates, {neurodifference} = the neurodifference of the selected character, {character} = the character selected on the Generate page, {topic} = the optional topic from the Teema field (empty if not set).'); ?></p>
 						</td>
 					</tr>
 				</table>

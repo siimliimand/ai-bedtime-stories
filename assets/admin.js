@@ -76,6 +76,12 @@
 		return isNaN(value) ? -1 : value;
 	}
 
+	function selectedTopic() {
+		var input = document.getElementById('abs-topic-input');
+
+		return input ? String(input.value || '').trim() : '';
+	}
+
 	var ideasButton = document.getElementById('abs-generate-ideas');
 	var ideasSpinner = document.getElementById('abs-ideas-spinner');
 	var ideasFeedback = document.getElementById('abs-ideas-feedback');
@@ -210,7 +216,7 @@
 		setIdeasRunning(true);
 		clearMessage(ideasFeedback);
 
-		post('abs_generate_ideas', { char: selectedCharacter() }).then(function (data) {
+		post('abs_generate_ideas', { char: selectedCharacter(), topic: selectedTopic() }).then(function (data) {
 			renderIdeas(Array.isArray(data.ideas) ? data.ideas : []);
 			setIdeasRunning(false);
 		}).catch(function (error) {

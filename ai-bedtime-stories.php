@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       AI Bedtime Stories
  * Description:       Generates bedtime story ideas and full Brothers Grimm-inspired stories using the z.ai GLM API (Coding Plan endpoint).
- * Version:           1.1.48
+ * Version:           1.1.49
  * Requires at least: 6.0
  * Requires PHP:      8.0
  * Text Domain:       ai-bedtime-stories
@@ -12,7 +12,7 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-define('ABS_VERSION', '1.1.48');
+define('ABS_VERSION', '1.1.49');
 define('ABS_PLUGIN_FILE', __FILE__);
 define('ABS_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('ABS_PLUGIN_URL', plugin_dir_url(__FILE__));
